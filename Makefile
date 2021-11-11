@@ -8,18 +8,19 @@ SRCS         = src/main.c\
                src/critical.c\
                src/mem.c\
                src/message.c\
-			   cmsis/core_cm3.c
+			   device/sysTick.c\
+			   device/svpwm.c
 # 汇编源文件
 ASMS         = boot/startup_stm32f10x.s
 
 # 包含路径
-INCLUDES     = -I./boot/ -I./cmsis/ -I./inc/
+INCLUDES     = -I./boot/ -I./cmsis/ -I./inc/ -I./device/
 # 宏定义
 DEFINES      =
 # 架构
 CORE         = -mcpu=cortex-m3
 # 编译优化等级
-OPTIMIZATION = -O1
+OPTIMIZATION = -O0
 # 链接脚本
 LD_FILE      = .\stm32f10x.ld
 

@@ -8,8 +8,11 @@ SRCS         = src/main.c\
                src/critical.c\
                src/mem.c\
                src/message.c\
-			   device/sysTick.c\
-			   device/svpwm.c
+               device/sysTick.c\
+               device/svpwm.c\
+               device/uart.c\
+               device/dma.c
+
 # 汇编源文件
 ASMS         = boot/startup_stm32f10x.s
 
@@ -78,6 +81,7 @@ ${OBJ_DIR}/%.o:%.s Makefile
 clean:
 	@rd /s /q $(subst /,\,${OBJ_DIR})
 	@md $(subst /,\,${OBJ_DIR})
+	@echo rm -rf ${OBJ_DIR}/*
 
 else
 
